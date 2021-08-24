@@ -1,3 +1,61 @@
-.TH man 1 "21 August 2021" "1.0" "Shell Project"
+.TH man 1 "24 August 2021" "1.0" "Shell Project"
+.SH NAME:
+.B hsh - Simple_shell
+.br
+.SH SYNOPSIS:
+.B ./hsh
+[command] [options]
+.br
+.SH COPYRIGHT:
+.B hsh
+is Copyright (C) Alejandro Gonzalez Serna and Dilan Rincon
+.br
+.SH DESCRIPTION:
+.B hsh
+(Simple Shell) holberton school project to learn the operation of shell making a minimalist version of it.
+.br
+.SH ARGUMENTS:
+.B exit:
+quits the program.
 
+.B ls:
+list directory contents.
+
+.B exit:
+quits the program, exits the shell.
+
+.B env:
+prints the environment variables
+
+.br
+.SH EXAMPLE:
+.IP
+
+$./hsh
+
+$pwd
+
+/home/vagrant/simple_shell
+
+$
+
+$/bin/pwd
+
+/home/vagrant/simple_shell
+
+$
+
+.br
+.SH SEE ALSO:
+.I sh(1)
+,
+.I bash(1)
+,
+.I _printf(3)
+.br
+.SH BUGS:
+No known bugs, if you find any report it to 949@holbertonschool.com
+.br
+
+.SH AUTHORS:
 Chepngeno Maureen, Frederick Owiti  
