@@ -1,39 +1,47 @@
 #include "shell.h"
-
 /**
- * loop_shell - main function
- * Return: Always 0.
+ * shell - Infinite loop that runs shell
+ * @ac: Arg count
+ * @av: args passed to shell at beginning of prog
+ * @env: Environment
+ * Return: Void
  */
-int loop_shell(void)
+void shell(int ac, char **av, char **env)
 {
-	char **arguments, *buffer, *getp, **argpath;
-	int execute, i = 0;
-	size_t bufsize = TOK_BUFSIZE, num_size;
+	char *line;
+	char **args;
+	int status = 1;
+	char *tmp = NULL;
+	char *er;
+	char *filename;
+	int flow;
 
+	er = "Error";
 	do {
-		write(0, "$ ", 2);
-		signal(SIGINT, signalc);
-		buffer = malloc(bufsize * sizeof(char));
-		if (buffer == NULL)
-			retu(buffer);
-		num_size = getline(&buffer, &bufsize, stdin);
-		buffer[num_size - 1] = '\0';
-		arguments = split_line(buffer);
-		getp = getpath("PATH=");
-		argpath = malloc(bufsize * sizeof(char));
-		if (argpath == NULL)
-			retu(*argpath);
-		argpath = split_line_path(getp);
-		for (i = 0; argpath[i] != '\0'; i++)
+		prompt();
+		line = _getline();
+		args = split_line(line);
+		flow = bridge(args[0], args);
+		if (flow == 2)
 		{
-			argpath[i] = _strcat(argpath[i], "/");
-			argpath[i] = _strcat(argpath[i], buffer);
-			if (stat_arguments(argpath[i]) == 0)
-				execute = execute_arguments(argpath[i]);
+			filename = args[0];
+			args[0] = find_path(args[0], tmp, er);
+			if (args[0] == er)
+			{
+				args[0] = search_cwd(filename, er);
+				if (args[0] == filename)
+					write(1, er, 5);
+			}
 		}
-		free(buffer);
-		free(arguments);
-		free(argpath);
-	} while (execute);
-	return (0);
+		if (args[0] != er)
+			status = execute_prog(args, line, env, flow);
+		free(line);
+		free(args);
+	} while (status);
+	if (!ac)
+		(void)ac;
+	if (!av)
+		(void)av;
+	if (!env)
+		(void)env;
 }
