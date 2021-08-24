@@ -7,7 +7,7 @@
 char *_getenv(char *env)
 {
 	int i = 0, n = 0;
-	char temp, *res;
+	char *temp, *res;
 
 	while (environ[i] != NULL)
 	{
@@ -19,7 +19,7 @@ char *_getenv(char *env)
 	while (temp[n] != '\0')
 	{
 		if (_strcmp(temp, env) == 0)
-			res = strstr(temp, "/");
+			res = _strstr(temp, "/");
 		n++;
 	}
 	return (res);
