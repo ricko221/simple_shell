@@ -10,9 +10,9 @@ char *search_cwd(char *filename, char *er)
 	struct dirent *sd;
 	char *ret;
 	int len = 0;
-	int i = 1;
+	int i = 0;
 
-	while (filename)
+	while (filename[len])
 		len++;
 	ret = malloc(sizeof(char) * (len + 3));
 	dir = opendir(".");
@@ -32,7 +32,7 @@ char *search_cwd(char *filename, char *er)
 				strcpy(ret, "./");
 				strcat(ret, filename);
 				closedir(dir);
-				if (!(access(ret, OK)))
+				if (!(access(ret, X_OK)))
 					return (ret);
 				else
 					write(2, er, 5);
