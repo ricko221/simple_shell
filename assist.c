@@ -105,3 +105,24 @@ int launch_prog(char **args)
 	(void)wpid;
 	return (1);
 }
+/**
+ * builtins_checker - Checks for builtins
+ * @args: Arguments passed from prompt
+ * Return: 1 if builtins exist, 0 if they don't
+ */
+int builtins_checker(char **args)
+{
+	int i;
+	builtins_t list[] = {
+		{"exit", exit_shell},
+		{"env", env_shell},
+		{NULL, NULL}
+	};
+
+	for (i = 0; list[i].arg != NULL; i++)
+	{
+		if (_strcmp(list[i].arg, args[0]) == 0)
+			return (1);
+	}
+	return (0);
+}
