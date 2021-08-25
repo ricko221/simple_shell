@@ -2,7 +2,7 @@
 /**
  * shell - Infinite loop that runs shell
  * @ac: Arg count
- * @av: args passed to shell at beginning of prog
+ * @av: args passed to shell at the  beginning of prog
  * @env: Environment
  * Return: Void
  */
