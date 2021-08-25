@@ -9,3 +9,4 @@ The Shell is a CLI (Command Line Interface) that provides a command based UI for
 Getting Started
 The project was written in C programming language. When compiled, it will function as the shell terminal.
 The link to the project is : https://github.com/ricko221/simple_shell.git
+The link can be used to clone the project.
