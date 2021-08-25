@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * _getline - Gets line of user input
+ * _getline - Gets the  line of user input
  * Return: Pointer to buffer of user input
  */
 char *_getline(void)
