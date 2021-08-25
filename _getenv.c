@@ -1,7 +1,7 @@
 #include "shell.h"
 /**
  * _getenv - gets env of input
- * @env: input
+ * @env: the input
  * Return: env without =
  */
 char *_getenv(char *env)
