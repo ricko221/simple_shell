@@ -16,7 +16,7 @@ void exit_shell(char **args, char *line, char **env)
 }
 /**
  * env_shell - Prints shell environment
- * @args: Arguments split from cmdline
+ * @args: Arguments split from commandline
  * @line: User input buffer
  * @env: Environment
  */
