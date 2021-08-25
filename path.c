@@ -10,7 +10,7 @@
 char *find_path(char *filename, char *tmp, char *er)
 {
 	DIR *dir;
-	struct dirent *sd;
+	struct dirent *sd; 
 	char *file_path, *path, *ret;
 	int len = 0;
 
