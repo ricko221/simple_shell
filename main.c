@@ -2,7 +2,7 @@
 
 /**
  * main - Entry point for shell, handles args to shell
- * @ac: Arg count
+ * @ac: Args count
  * @av: Arr of args
  * @env: Environment
  * Return: 0;
