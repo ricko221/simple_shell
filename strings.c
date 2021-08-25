@@ -1,6 +1,6 @@
 #include "shell.h"
 /**
- * _strcmp - Compares two strings
+ * _strcmp - Compare two strings
  * @s1: First string
  * @s2: Second string
  * Return: Difference of first nonmatching character
